@@ -76,21 +76,17 @@ function ProductTable() {
                 </tr>
               </thead>
               <tbody>
-                <ProductCategoryRow />
+                <ProductCategoryRow name="Fruits" />
 
-                <ProductRow />
+                <ProductRow name="Apple" price="1" />
+                <ProductRow name="Dragonfruit" price="1" />
+                <ProductRow name="Passionfruit" price="2" />
 
-                <ProductRow />
+                <ProductCategoryRow name="Vegetables" />
 
-                <ProductRow />
-
-                <ProductCategoryRow />
-
-                <ProductRow />
-
-                <ProductRow />
-
-                <ProductRow />
+                <ProductRow name="Spinach" price="2" />
+                <ProductRow name="Pumpkin" price="4" />
+                <ProductRow name="Peas" price="1" />
               </tbody>
             </table>
           </div>
@@ -100,18 +96,18 @@ function ProductTable() {
   )
 }
 
-function ProductRow() {
+function ProductRow(props) {
   return (
     <tr className="hover:bg-gray-100">
-      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">Apple</td>
-      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">$1</td>
+      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{props.name}</td>
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">${props.price}</td>
     </tr>
   )
 }
 
-function ProductCategoryRow() {
+function ProductCategoryRow(props) {
   return (
-    <th scope="col" colSpan={2} className="px-6 py-3 text-center text-sm font-medium text-gray-600 bg-gray-100">Fruits</th>
+    <th scope="col" colSpan={2} className="px-6 py-3 text-center text-sm font-medium text-gray-600 bg-gray-100">{props.name}</th>
   )
 }
 
